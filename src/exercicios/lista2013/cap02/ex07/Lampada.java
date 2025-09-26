@@ -4,7 +4,7 @@ public class Lampada {
     private boolean estadoLampada;
 
     public Lampada(boolean estadoLampada) {
-        this.estadoLampada = estadoLampada;
+        setEstadoLampada(estadoLampada);
     }
 
     public boolean getEstadoLampada() {

@@ -3,9 +3,10 @@ package exercicios.lista2013.cap02.ex29;
 public class Main {
     public static void main(String[] args) {
         
-        ContaBancariaSimplificada c1 = new ContaBancariaSimplificada("Manuel", 13, false);
+        ContaBancariaSimplificada c1 = new ContaBancariaSimplificada();
         
         System.out.println("Abrir conta:");
+        c1.setNome("Manuel");
         c1.abreConta();
         System.out.println("Nome: " + c1.getNome());
         System.out.println("Saldo: " + c1.getSaldo());

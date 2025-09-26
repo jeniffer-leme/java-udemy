@@ -6,9 +6,9 @@ public class Livro {
     private int paginas;
 
     public Livro(String nome, String autor, int paginas) {
-        this.nome = nome;
-        this.autor = autor;
-        this.paginas = paginas;
+        setNome(nome);
+        setAutor(autor);
+        setPaginas(paginas);
     }
 
     public String getNome() {

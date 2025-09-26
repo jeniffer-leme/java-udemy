@@ -5,12 +5,6 @@ public class ContaBancariaSimplificada {
     private double saldo;
     private boolean ehEspecial;
 
-    public ContaBancariaSimplificada(String nome, double saldo, boolean ehEspecial) {
-        this.nome = nome;
-        this.saldo = saldo;
-        this.ehEspecial = ehEspecial;
-    }
-
     public String getNome() {
         return nome;
     }

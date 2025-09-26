@@ -6,9 +6,9 @@ public class Data {
     private int ano;
 
     public Data(int dia, int mes, int ano) {
-        this.dia = dia;
-        this.mes = mes;
-        this.ano = ano;
+        setDia(dia);
+        setMes(mes);
+        setAno(ano);
     }
 
     public int getDia() {

@@ -9,12 +9,12 @@ public class LivroLivraria {
     private int codigo;
 
     public LivroLivraria(String nome, String autor, int paginas, double preco, int estoque, int codigo) {
-        this.nome = nome;
-        this.autor = autor;
-        this.paginas = paginas;
-        this.preco = preco;
-        this.estoque = estoque;
-        this.codigo = codigo;
+        setNome(nome);
+        setAutor(autor);
+        setPaginas(paginas);
+        setPreco(preco);
+        setEstoque(estoque);
+        setCodigo(codigo);
     }
 
     public String getNome() {

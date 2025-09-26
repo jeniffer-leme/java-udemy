@@ -5,8 +5,8 @@ public class Lampada2 {
     private int watts;
 
     public Lampada2(boolean estadoLampada, int watts) {
-        this.estadoLampada = estadoLampada;
-        this.watts = watts;
+        setEstadoLampada(estadoLampada);
+        setWatts(watts);
     }
 
     public boolean getEstadoLampada() {
