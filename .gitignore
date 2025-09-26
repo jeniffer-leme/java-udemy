@@ -5,3 +5,5 @@ git config --global user.email "jeniffer.leme@ifsp.edu.br"
 /ARQOBJAQ3029701/JavaApplication1/nbproject/private/
 /ARQOBJAQ3029701/nbproject/private/
 /ARQOBJAQ3029701/build/
+/build/
+/dist/
