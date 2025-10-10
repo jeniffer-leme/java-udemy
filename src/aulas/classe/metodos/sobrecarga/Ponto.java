@@ -25,6 +25,14 @@ public class Ponto {
     public void setX(double x) {
         this.x = x;
     }
+    
+    public void SetX(){
+        setX(0.0);
+    }
+    
+    public void SetX(String x){
+        setX(Double.parseDouble(x));
+    }
 
     public double getY() {
         return y;
