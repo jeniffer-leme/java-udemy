@@ -1,25 +1,25 @@
 package exercicios.lista2013.cap04.ex02;
 
 public class Lampada {
-    private boolean lampada;
+    private boolean acesa;
 
-    public Lampada(boolean lampada) {
-        setLampada(lampada);
+    public Lampada(boolean acesa) {
+        setAcesa(acesa);
     }
 
-    public boolean isLampada() {
-        return lampada;
+    public boolean isAcesa() {
+        return acesa;
     }
 
-    public void setLampada(boolean lampada) {
-        this.lampada = lampada;
+    public void setAcesa(boolean acesa) {
+        this.acesa = acesa;
     }
     
-    public boolean mostrarEstado(){
-        if(isLampada()){
-            return true;
+    public void mostrarEstado(){
+        if(acesa){
+            System.out.println("A lâmpada está acesa");
         } else {
-            return false;
+            System.out.println("A lâmapada está apagada");
         }
     }
     

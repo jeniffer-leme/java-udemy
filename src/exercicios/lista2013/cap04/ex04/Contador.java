@@ -4,23 +4,32 @@ public class Contador {
     private int contador;
 
     public Contador() {
-        contador = 0;
+        setContador(0);
     }
     
     public Contador(int contador) {
+        setContador(contador);
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
         this.contador = contador;
     }
     
     
+    
     public void zerarValor(){
-        contador = 0;
+        setContador(0);
     }
     
     public void incrementarValor(){
-        contador++;
+        setContador(getContador() + 1);
     }
     
     public void imprimirValor(){
-        System.out.println("Valor: " + contador);
+        System.out.println("Valor: " + getContador());
     }
 }

@@ -4,6 +4,8 @@ public class Linha {
     private Ponto2D x, y;
 
     public Linha() {
+        setX(new Ponto2D(0, 0));
+        setY(new Ponto2D(0, 0));
     }
     
     public Linha(Ponto2D fim) {

@@ -1,7 +1,7 @@
 package exercicios.lista2013.cap04.ex03;
 
 public class Lampada {
-    private boolean lampada;
+    private boolean acesa;
     private int watts;
 
     public Lampada(int watts) {
@@ -12,12 +12,12 @@ public class Lampada {
         setWatts(60);
     }
 
-    public boolean isLampada() {
-        return lampada;
+    public boolean isAcesa() {
+        return acesa;
     }
 
-    public void setLampada(boolean lampada) {
-        this.lampada = lampada;
+    public void setAcesa(boolean acesa) {
+        this.acesa = acesa;
     }
 
     public int getWatts() {
@@ -28,13 +28,11 @@ public class Lampada {
         this.watts = watts;
     }
     
-    
-    
-    public boolean acender(){
-        if(isLampada()){
-            return true;
+    public void mostrarEstado(){
+        if(acesa){
+            System.out.println("A lâmpada está acesa.");
         } else {
-            return false;
+            System.out.println("A lâmpada está apagada.");
         }
     }
 }

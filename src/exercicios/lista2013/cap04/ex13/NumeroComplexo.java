@@ -16,7 +16,8 @@ public class NumeroComplexo {
     }
     
     public NumeroComplexo(){
-        
+        setNumero1(0);
+        setNumero2(0);
     }
     
    

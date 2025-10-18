@@ -4,13 +4,14 @@ public class Ponto2D {
     private double x, y;
 
     public Ponto2D() {
+        setX(0);
+        setY(0);
     }
 
     public Ponto2D(double x, double y) {
         setX(x);
         setY(y);
     }
-    
     
 
     public double getX() {
@@ -42,19 +43,17 @@ public class Ponto2D {
         }
     }
     
-    public void origem(Ponto2D num){
-        num.setX(0);
-        num.setY(0);
+    public Ponto2D origem(){
+        return new Ponto2D(0,0);
     }
     
-    public void clone(Ponto2D num){
-        num.setX(getX());
-        num.setY(getY());
+    public Ponto2D clona(){
+        return new Ponto2D(getX(), getY());
     }
     
-    public String imprimirValor(){
-        String resultado = "X: " + getX() + " Y: " + getY();
-        return resultado;
+    @Override
+    public String toString(){
+        return "(" + getX() + ", " + getY() + ")";
     }
     
 }

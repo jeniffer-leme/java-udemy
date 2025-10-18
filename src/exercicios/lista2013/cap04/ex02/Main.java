@@ -5,6 +5,6 @@ public class Main {
         
         Lampada l1 = new Lampada(true);
         
-        System.out.println("A lampada esta acesa: " + l1.mostrarEstado());
+        l1.mostrarEstado();
     }
 }

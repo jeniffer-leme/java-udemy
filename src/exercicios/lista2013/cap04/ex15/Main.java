@@ -8,25 +8,25 @@ public class Main {
         
         p1.inicializaPonto(3, 6);
         
-        System.out.println(p1.imprimirValor());
+        System.out.println(p1.toString());
         
         p2.inicializaPonto(3, 6);
         
         System.out.println("Igual: " + p1.ehIgual(p2));
         
-        p1.origem(p2);
+        p1.origem();
         
-        System.out.println(p1.imprimirValor());
+        System.out.println(p1.toString());
         
-        System.out.println(p2.imprimirValor());
+        System.out.println(p2.toString());
         
         System.out.println("Igual: " + p1.ehIgual(p2));
         
-        p2.clone(p1);
+        p2.clona();
         
-        System.out.println(p1.imprimirValor());
+        System.out.println(p1.toString());
         
-        System.out.println(p2.imprimirValor());
+        System.out.println(p2.toString());
         
         System.out.println("Igual: " + p1.ehIgual(p2));
         

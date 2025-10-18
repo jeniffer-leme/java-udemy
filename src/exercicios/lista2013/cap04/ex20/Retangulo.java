@@ -5,6 +5,8 @@ public class Retangulo {
     private Ponto2D y;
 
     public Retangulo() {
+        setX(new Ponto2D(0, 0));
+        setY(new Ponto2D(0, 0));
     }
     
     public Retangulo(Ponto2D y) {
