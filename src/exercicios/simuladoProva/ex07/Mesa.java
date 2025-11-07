@@ -5,6 +5,13 @@ public class Mesa {
     private int numeroPessoas;
     private int numeroPedidos;
     private double valor;
+    
+    public Mesa(int numeroMesa) {
+    setNumeroMesa(numeroMesa);
+    setNumeroPessoas(0);
+    setNumeroPedidos(0);
+    setValor(0);
+}
 
     public int getNumeroMesa() {
         return numeroMesa;
@@ -50,22 +57,37 @@ public class Mesa {
         }
     }
     
+    public void acomodarPessoas(int qtdPessoas) {
+        setNumeroPessoas(qtdPessoas);
+    }
+    
     public void adicionarPedido(double valorPedido){
         setNumeroPedidos(getNumeroPedidos() + 1);
         setValor(getValor() + valorPedido);
     }
     
-    public void fecharConta(){
+    public void fecharConta(String nome, String endereco, String cnpj, int telefone) {
+        System.out.println("=== Conta do Restaurante ===");
+        System.out.println("Restaurante: " + nome);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("CNPJ: " + cnpj);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("-----------------------------");
         System.out.println("Número da mesa: " + getNumeroMesa());
-        System.out.println("Número de pessoas " + getNumeroPessoas());
-        
+        System.out.println("Número de pessoas: " + getNumeroPessoas());
+        System.out.println("Número de pedidos: " + getNumeroPedidos());
+
         double total = getValor() * 1.10;
-        System.out.println("Valor Total: " + total);
-        
-        if(getNumeroPessoas() > 0){
-            System.out.println("Valor Total de pessoas: " + total / getNumeroPessoas());
+        System.out.println("Valor Total (+10%): R$ " + total);
+
+        if (getNumeroPessoas() > 0) {
+            System.out.println("Valor por pessoa: R$ " + (total / getNumeroPessoas()));
         }
-        
+
+        System.out.println("-----------------------------");
+        System.out.println("Conta fechada com sucesso!\n");
+
+        // Resetando atributos
         setNumeroPessoas(0);
         setNumeroPedidos(0);
         setValor(0);
