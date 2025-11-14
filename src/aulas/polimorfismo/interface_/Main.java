@@ -1,5 +1,7 @@
 package aulas.polimorfismo.interface_;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         
@@ -13,5 +15,17 @@ public class Main {
  
         System.out.println(saida1.getDescricao() + " " + saida1.getValorAPagar());
         System.out.println(saida2.getDescricao() + " " + saida2.getValorAPagar());
+        
+        System.out.println("----------------------");
+        
+        System.out.println("Processamentro de Caixa");
+        ArrayList<Pagavel> caixa = new ArrayList<>();
+        
+        caixa.add(saida1);
+        caixa.add(saida2);
+        
+        for(Pagavel p : caixa) {
+            System.out.println(p.getDescricao() + "---> " + p.getValorAPagar());
+        }
     }
 }

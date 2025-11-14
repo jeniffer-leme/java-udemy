@@ -43,5 +43,35 @@ public class Main {
         emp4.setVendasRealizadas(2000);
         emp4.setTaxaComissao(20);
         System.out.println(emp4);
+        
+        System.out.println("-----------------------------");
+        
+        Empregado[] colaboradores = new Empregado[200];
+        
+        colaboradores[0] = emp1;
+        colaboradores[2] = emp3;
+        colaboradores[3] = emp4;
+        
+        System.out.println("Processar Folha de Pagamento");
+        
+        for(int i = 0; i < colaboradores.length; i++){
+            
+            if(colaboradores[i] != null) {
+                
+                if(colaboradores[i] instanceof AssalariadoComissionado) {
+                    
+                    AssalariadoComissionado aux = (AssalariadoComissionado) colaboradores[i];
+                    
+                    double salario = aux.getSalario();
+                    aux.setSalario(salario * 1.10);
+                    
+                    System.out.println(colaboradores[i].proventoSemanal());
+                    
+                    aux.setSalario(salario);
+                } else {
+                    System.out.println(colaboradores[i].proventoSemanal());
+                }
+            }
+        }
     }
 }
