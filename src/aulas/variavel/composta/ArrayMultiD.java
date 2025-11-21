@@ -1,4 +1,4 @@
-package aulas.variavel.composta;
+    package aulas.variavel.composta;
 
 public class ArrayMultiD {
     public static void main(String[] args) {
