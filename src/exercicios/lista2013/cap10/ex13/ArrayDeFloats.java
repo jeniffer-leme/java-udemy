@@ -55,11 +55,16 @@ public class ArrayDeFloats {
         return menorAteAgora;
     }
     
-    public boolean ehIgual(ArrayDeFloats array) {
-        if(this.getArray() == array.getArray()) {
-            return true;
-        } else {
+    public boolean ehIgual(ArrayDeFloats outro) {
+        if(this.array.length != outro.array.length) {
             return false;
         }
+        
+        for(int i = 0; i < this.array.length; i++) {
+            if(this.array[i] != outro.array[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }

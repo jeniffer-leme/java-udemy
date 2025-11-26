@@ -36,19 +36,16 @@ public class MatrizDeDoubles {
         this.matriz = matriz;
     }
     
-    public void acessarMatriz() {
-        for(int l = 0; l < getLinhas(); l++) {
-            for(int c = 0; c < getColunas(); c++) {
-                System.out.println("Matriz["+l+"]["+c+"] = " + matriz[l][c] + "\t");
-            }
+    public double acessarMatriz(int linha, int coluna) {
+        if(linha >= 0 && linha < getLinhas() && coluna >= 0 && getColunas() > coluna){
+            return matriz[linha][coluna];
         }
+        return Double.NaN;
     }
     
-    public void modificarMatriz(double valor) {
-        for(int l = 0; l < getLinhas(); l++) {
-            for(int c = 0; c < getColunas(); c++) {
-                matriz[l][c] = valor;
-            }
+    public void modificarMatriz(int linha, int coluna, double valor) {
+        if(linha >= 0 && linha < getLinhas() && coluna >= 0 && getColunas() > coluna){
+            matriz[linha][coluna] = valor;
         }
     }
     
