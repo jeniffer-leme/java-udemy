@@ -1,11 +1,12 @@
 package exercicios.simuladoProva.ex14.ex02;
 
-public abstract class MaterialBibliografico {
+public abstract class MaterialBibliografico implements Emprestavel {
     private String localizacao;
     private String titulo;
     private String autores;
     private int edicao;
     private int ano;
+    int quantidade;
 
     public MaterialBibliografico(String localizacao, String titulo, String autores, int edicao, int ano) {
         setLocalizacao(localizacao);
@@ -19,7 +20,7 @@ public abstract class MaterialBibliografico {
         return localizacao;
     }
 
-    public void setLocalizacao(String localizacao) {
+    private void setLocalizacao(String localizacao) {
         if(localizacao != null) {
             this.localizacao = localizacao;
         } else {
@@ -31,7 +32,7 @@ public abstract class MaterialBibliografico {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
+    private void setTitulo(String titulo) {
         if(titulo != null) {
             this.titulo = titulo;
         } else {
@@ -43,7 +44,7 @@ public abstract class MaterialBibliografico {
         return autores;
     }
 
-    public void setAutores(String autores) {
+    private void setAutores(String autores) {
         if(autores != null) {
             this.autores = autores;
         } else {
@@ -55,11 +56,11 @@ public abstract class MaterialBibliografico {
         return edicao;
     }
 
-    public void setEdicao(int edicao) {
+    private void setEdicao(int edicao) {
         if(edicao > 0) {
             this.edicao = edicao;
         } else {
-            throw new IllegalArgumentException("A edição não pode ser <= que 0");
+            throw new IllegalArgumentException("O edicao precisa ser > 0");
         }
     }
 
@@ -67,13 +68,50 @@ public abstract class MaterialBibliografico {
         return ano;
     }
 
-    public void setAno(int ano) {
-        if(ano > 0 && ano < 2026) {
+    private void setAno(int ano) {
+        if(ano > 0) {
             this.ano = ano;
         } else {
-            throw new IllegalArgumentException("O ano não pode ser negativo e maior que 2026");
+            throw new IllegalArgumentException("O ano precisa ser > 0");
+        }
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    protected void setQuantidade(int quantidade) {
+        if(quantidade > 0) {
+            this.quantidade = quantidade;
+        } else {
+            throw new IllegalArgumentException("O quantidade precisa ser > 0");
         }
     }
     
+    @Override
+    public String getNomeObjeto() {
+        return "Localização: " + getLocalizacao() +
+        "\nTítulo: " + getTitulo() +
+        "\nAutores: " + getAutores() + 
+        "\nEdição: " + getEdicao() +
+        "\nAno: " + getAno() +
+        "\nQuantidade disponível: " + getQuantidade();
+    }
     
+    @Override
+    public boolean podeEmprestar() {
+        if(getQuantidade() > 1) {
+            return true;
+        }
+        return false;
+    }
+    
+    @Override
+    public boolean emprestar() {
+        if(podeEmprestar()) {
+            setQuantidade(getQuantidade()- 1);
+            return true;
+        }
+        return false;
+    }
 }

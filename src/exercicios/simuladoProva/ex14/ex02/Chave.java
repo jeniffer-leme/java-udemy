@@ -3,18 +3,17 @@ package exercicios.simuladoProva.ex14.ex02;
 public class Chave implements Emprestavel {
     private String armario;
     private int qtdChave;
-    private int emprestar;
 
-    public Chave(String armario, int qtdChave) {
+    public Chave(String armario) {
         setArmario(armario);
-        setQtdChave(qtdChave);
+        setQtdChave(1);
     }
     
     public String getArmario() {
         return armario;
     }
 
-    public void setArmario(String armario) {
+    private void setArmario(String armario) {
         if(armario.matches("[Aa]\\d+")) {
             this.armario = armario;
         } else {
@@ -30,14 +29,6 @@ public class Chave implements Emprestavel {
         this.qtdChave = qtdChave;
     }
     
-    public int getEmprestar() {
-        return emprestar;
-    }
-
-    public void setEmprestar(int emprestar) {
-        this.emprestar = emprestar;
-    }
-    
     @Override
     public String getNomeObjeto() {
         return "Chave\n" + 
@@ -46,17 +37,17 @@ public class Chave implements Emprestavel {
     }
 
     @Override
-    public boolean emprestar() {
-        if(getQtdChave() == getEmprestar()) {
-            setQtdChave(getQtdChave() - getEmprestar());
+    public boolean podeEmprestar() {
+        if(getQtdChave() == 1) {
             return true;
         } 
             return false;
     }
-
+    
     @Override
-    public boolean podeEmprestar() {
-        if(getQtdChave() == getEmprestar()) {
+    public boolean emprestar() {
+        if(podeEmprestar()) {
+            setQtdChave(0);
             return true;
         } 
             return false;
@@ -64,8 +55,8 @@ public class Chave implements Emprestavel {
 
     @Override
     public boolean devolver() {
-        if(getEmprestar() > 0) {
-            setQtdChave(getQtdChave() + getEmprestar());
+        if(getQtdChave() == 0) {
+            setQtdChave(1);
             return true;
         } 
             return false;

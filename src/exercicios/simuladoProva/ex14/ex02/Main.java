@@ -6,7 +6,7 @@ public class Main {
         
         e[0] = new LivroFisico("Araraquara", "Aprendendo Java", "Robson", 3, 2017);
         e[1] = new Revista("Dourado", "Aprendendo HTML", "Maria", 4, 2022);
-        e[2] = new Chave("A568", 1);
+        e[2] = new Chave("A568");
         
         System.out.println(e[0].getNomeObjeto());
         

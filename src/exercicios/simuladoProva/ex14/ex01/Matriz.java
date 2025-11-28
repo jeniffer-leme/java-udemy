@@ -2,6 +2,7 @@ package exercicios.simuladoProva.ex14.ex01;
 
 public class Matriz {
     private double matriz[][];
+    private int tamanho;
 
     public Matriz(int tamanho, double valorInicial) {
         if(tamanho != 2 && tamanho != 3) {
@@ -19,13 +20,13 @@ public class Matriz {
     public Matriz(int tamanho) {
         this(tamanho, 0.0);
     }
-    
-    public double[][] getMatriz() {
-        return matriz;
+
+    public int getTamanho() {
+        return tamanho;
     }
 
-    public void setMatriz(double[][] matriz) {
-        this.matriz = matriz;
+    public void setTamanho(int tamanho) {
+        this.tamanho = tamanho;
     }
     
     public double acessarMatriz(int linha, int coluna) {
@@ -107,7 +108,7 @@ public class Matriz {
     public double determinanteDaMatriz() {
         double det;
         
-        if(matriz.length == 2) {
+        if(getTamanho() == 2) {
             det = (matriz[0][0] * matriz[1][1]) - (matriz[0][1] * matriz[1][0]);
             
         } else if(matriz.length == 3) {
