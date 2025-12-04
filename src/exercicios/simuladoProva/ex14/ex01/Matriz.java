@@ -4,16 +4,13 @@ public class Matriz {
     private double matriz[][];
     private int tamanho;
 
-    public Matriz(int tamanho, double valorInicial) {
-        if(tamanho != 2 && tamanho != 3) {
-            throw new IllegalArgumentException("Matriz precisa ter tamanho 2x2 ou 3x3");
-        } else {
-            matriz = new double[tamanho][tamanho];
-            for(int i = 0; i < tamanho; i++) {
-                for(int j = 0; j < tamanho; j++) {
-                    matriz[i][j] = valorInicial;
-                }
-            }
+    public Matriz(int tamanho, double valor) {
+        setTamanho(tamanho);
+        
+        matriz = new double[tamanho][tamanho];
+        
+        if( valor != 0.0 ) {
+            inicializarMatriz(valor);
         }
     }
 
@@ -26,36 +23,40 @@ public class Matriz {
     }
 
     public void setTamanho(int tamanho) {
-        this.tamanho = tamanho;
-    }
-    
-    public double acessarMatriz(int linha, int coluna) {
-        if(linha < 0 || matriz.length <= linha || coluna < 0 || matriz[0].length <= coluna ) {
-            throw new IllegalArgumentException("Índice fora dos limites da matriz");
-        } else { 
-            return matriz[linha][coluna];
-        }
-    }
-    
-    public void alterarMatriz(int linha, int coluna, double valor) {
-        if(linha < 0 || linha >= matriz.length || coluna < 0 || coluna >= matriz[0].length) {
-            throw new IllegalArgumentException("Índice fora dos limites da matriz");
+        if( tamanho == 2 || tamanho == 3 ) {
+            this.tamanho = tamanho;
         } else {
-            matriz[linha][coluna] = valor;
+            throw new IllegalArgumentException("tamanho deve ser 2 ou 3");
         }
+    }
+    
+    private void inicializarMatriz(double valor) {
+        for(int linha = 0; linha < getTamanho(); linha++) {
+            for(int coluna = 0; coluna < getTamanho(); coluna++) {
+                matriz[linha][coluna] = valor;
+            }
+        }
+    }
+    
+    public double getValor(int linha, int coluna) {
+        return matriz[linha][coluna];
+    }
+    
+    public void setValor(int linha, int coluna, double valor) {
+        matriz[linha][coluna] = valor;
     }
     
     public void somaElementoMatriz(double valor) {
-        for(int i = 0; i < matriz.length; i++) {
-            for(int j = 0; j  < matriz[0].length; j++) {
+        for(int i = 0; i < getTamanho(); i++) {
+            for(int j = 0; j  < getTamanho(); j++) {
                 matriz[i][j] += valor;
             }
         }
     }
     
     public void subtrairElementoMatriz(double valor) {
-        for(int i = 0; i < matriz.length; i++) {
-            for(int j = 0; j < matriz[0].length; j++) {
+        for(int i = 0; i < getTamanho(); i++) {
+            for(int j = 0; j < getTamanho(); j++) {
                 matriz[i][j] -= valor;
             }
         }
@@ -65,8 +66,8 @@ public class Matriz {
         if(valor == 0) {
             throw new IllegalArgumentException("Não é possível uma divisão por zero.");
         } else {
-            for(int i = 0; i < matriz.length; i++) {
-                for(int j = 0; j < matriz[0].length; j++) {
+            for(int i = 0; i < getTamanho(); i++) {
+                for(int j = 0; j < getTamanho(); j++) {
                     matriz[i][j] /= valor;
                 }
             }
@@ -74,8 +75,8 @@ public class Matriz {
     }
     
     public void multiplicarElementoMatriz(double valor) {
-        for(int i = 0; i < matriz.length; i++) {
-            for(int j = 0; j < matriz[0].length; j++) {
+        for(int i = 0; i < getTamanho(); i++) {
+            for(int j = 0; j < getTamanho(); j++) {
                 matriz[i][j] *= valor;
             }
         }
@@ -83,8 +84,8 @@ public class Matriz {
     
     public double maiorNumero() {
         double temp = matriz[0][0];
-        for(int i = 0; i < matriz.length; i++) {
-            for(int j = 0; j < matriz[0].length; j++) {
+        for(int i = 0; i < getTamanho(); i++) {
+            for(int j = 0; j < getTamanho(); j++) {
                 if(matriz[i][j] > temp) {
                     temp = matriz[i][j];
                 }
@@ -95,8 +96,8 @@ public class Matriz {
     
     public double menorNumero() {
         double temp = matriz[0][0];
-        for(int i = 0; i < matriz.length; i++) {
-            for(int j = 0; j < matriz[0].length; j++) {
+        for(int i = 0; i < getTamanho(); i++) {
+            for(int j = 0; j < getTamanho(); j++) {
                 if(matriz[i][j] < temp){
                     temp = matriz[i][j];
                 }
@@ -111,7 +112,7 @@ public class Matriz {
         if(getTamanho() == 2) {
             det = (matriz[0][0] * matriz[1][1]) - (matriz[0][1] * matriz[1][0]);
             
-        } else if(matriz.length == 3) {
+        } else if(getTamanho() == 3) {
             det = matriz[0][0] * matriz[1][1] * matriz[2][2]
                 + matriz[0][1] * matriz[1][2] * matriz[2][0]
                 + matriz[0][2] * matriz[1][0] * matriz[2][1]
@@ -126,14 +127,14 @@ public class Matriz {
 
     @Override
     public String toString() {
-        String texto = "Matriz: \n";
+        String texto = "";
         
-        for(int i = 0; i < matriz.length; i++) {
+        for(int i = 0; i < getTamanho(); i++) {
             texto += "[";
-            for(int j = 0; j < matriz[0].length; j++) {
-                texto += matriz[i][j] + ", ";
+            for(int j = 0; j < getTamanho(); j++) {
+                texto += "[" + matriz[i][j] + "] \t";
             }
-            texto += "]\n";
+            texto += "\n";
         }
         return texto;
     }

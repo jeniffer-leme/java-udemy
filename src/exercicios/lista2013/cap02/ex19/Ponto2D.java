@@ -1,5 +1,3 @@
-//INACABADO
-
 package exercicios.lista2013.cap02.ex19;
 
 public class Ponto2D {
@@ -27,11 +25,7 @@ public class Ponto2D {
         this.y = y;
     }
     
-    /*public double mostrarEixos(){
-        getX();
-        getY();
-    }*/
-    
-    
-    
+    public void mostrarPonto() {
+        System.out.println("(" + x + "," + y + ")");
+    }
 }

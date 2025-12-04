@@ -22,7 +22,7 @@ public class HoraAproximada {
         if(h >= 0 && h <= 23){
             hora = h;
         } else {
-            hora = 0;
+            throw new IllegalArgumentException("hora inválida: >= 0 && <= 23");
         }
     }
     
@@ -30,7 +30,7 @@ public class HoraAproximada {
         if(m >= 0 && m <= 59){
             minutos = m;
         } else {
-            minutos = 0;
+            throw new IllegalArgumentException("minuto inválido >= 0 && <= 59");
         }
     }
     
@@ -42,5 +42,7 @@ public class HoraAproximada {
         }
     }
     
-    
+    public void mostraDados() {
+        System.out.println( hora + ":" + minutos );
+    }
 }

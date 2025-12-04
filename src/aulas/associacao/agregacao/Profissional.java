@@ -5,8 +5,6 @@ public class Profissional {
 
     public Profissional() {
     }
-
-    
     
     public void setEmpresa(Empresa firma) {
         this.firma = firma;
