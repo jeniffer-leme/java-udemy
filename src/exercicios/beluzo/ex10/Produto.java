@@ -9,20 +9,20 @@ public class Produto {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
     public int getQuantidade() {
         return quantidade;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public void setQuantidade(int quantidade) {
@@ -31,8 +31,8 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Nome: " + getNome() + ", Preço: " + getPreco() + ", Quantidade: " + getQuantidade() + "\n";
+        return "Nome: " + getNome() + "\n" +
+                "Preço: " + getPreco() + "\n" +
+                "Quantidade: " + getQuantidade();
     }
-    
-    
 }

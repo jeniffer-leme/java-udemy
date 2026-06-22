@@ -6,27 +6,29 @@ import java.util.List;
 
 public class Pessoa {
     public static void main(String[] args) {
-        List<String> nomes = new ArrayList<>();
+        List<String> nomes = new ArrayList();
         
         nomes.add("Maria");
         nomes.add("Lucas");
-        nomes.add("Luis");
+        nomes.add("Zuzu");
+        nomes.add("Bruna");
         nomes.add("Ana");
-        nomes.add("Marcela");
-        nomes.add("Marcelina");
+        nomes.add("Denis");
         
-        System.out.println("Desordenada:");
-        for(String n : nomes) {
-            System.out.println(n); 
+        System.out.println("Desordenado:");
+        System.out.println("====NOMES====");
+        for(String nome : nomes) {
+            System.out.println(nome);
         }
         
-        System.out.println("--------------------------------");
+        System.out.println("-----------------------------");
         
-        System.out.println("Ordenada:");
-        Collections.sort(nomes); 
+        Collections.sort(nomes);
         
-        for(String n : nomes) {
-            System.out.println(n); 
+        System.out.println("Ordenado: ");
+        System.out.println("====NOMES====");
+        for(String nome : nomes) {
+            System.out.println(nome);
         }
     }
 }

@@ -24,7 +24,7 @@ public class Comparacao {
         
         long fimArray = System.currentTimeMillis();
         
-        System.out.println("-----------------------------");
+        
         
         long inicioLinked = System.currentTimeMillis();
         

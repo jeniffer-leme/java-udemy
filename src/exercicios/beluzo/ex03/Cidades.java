@@ -5,20 +5,23 @@ import java.util.List;
 
 public class Cidades {
     public static void main(String[] args) {
-        List<String> cidade = new LinkedList<>();
+        LinkedList<String> cidade = new LinkedList();
         
+        cidade.add("Nova York");
         cidade.add("Araraquara");
-        cidade.add("Guarulhos");
-        cidade.add("Porto Rico");
+        cidade.add("Roma");
         cidade.add("Salvador");
         
+        System.out.println("====CIDADES====");
         for(String cidades : cidade) {
             System.out.println(cidades);
         }
         
-        cidade.add(2, "Nova York");
+        System.out.println("----------------------");
         
-        System.out.println("-----------------------------------");
+        cidade.add(1, "Seul");
+        
+        System.out.println("====CIDADES====");
         for(String cidades : cidade) {
             System.out.println(cidades);
         }

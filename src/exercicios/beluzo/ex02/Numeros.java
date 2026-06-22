@@ -5,22 +5,21 @@ import java.util.List;
 
 public class Numeros {
     public static void main(String[] args) {
-        List<Integer> numeros = new ArrayList<>();
+        List<Integer> numero = new ArrayList();
         
-        numeros.add(1);
-        numeros.add(2);
-        numeros.add(3);
-        numeros.add(4);
-        numeros.add(5);
-        numeros.add(6);
-        numeros.add(7);
-        numeros.add(8);
-        numeros.add(9);
-        numeros.add(10);
+        numero.add(12);
+        numero.add(3);
+        numero.add(89);
+        numero.add(21);
+        numero.add(0);
+        numero.add(29);
+        numero.add(45);
+        numero.add(9);
+        numero.add(52);
+        numero.add(90);
         
-        System.out.println("Primeiro elemento: " + numeros.get(0));
-        System.out.println("Último elemento: " + numeros.get(9));
-        System.out.println("Quinto elemento: " + numeros.get(5));
+        System.out.println("1° Elemento: " + numero.getFirst());
+        System.out.println("Último Elemento: " + numero.getLast());
+        System.out.println("5° Elemento: " + numero.get(4));
     }
-    
 }
