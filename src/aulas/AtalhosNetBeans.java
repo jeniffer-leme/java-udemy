@@ -18,5 +18,12 @@ public class AtalhosNetBeans {
         System.out.println("ctrl + shift + i: Importa os pacotes Java falantes");
         
         System.out.println("ctrl + /: Comenta a linha ou seleção do código");
+        
+        System.out.println("ctrl + shift + '-' : minimiza o corpo dos métodos");        
+        
+        System.out.println("ctrl + shift + '+' : maxmiza o corpo dos métodos");        
+        
+        System.out.println("ctrl + r : refatora identificador");  
     }
 }
+    
