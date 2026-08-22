@@ -1,10 +1,10 @@
 package exercicios.udemy.condicionais.ex04;
 
 public class Tempo {
-    int id;
-    int horaInicial;
-    int horaFinal;
-    int duracao;
+    private int id;
+    private int horaInicial;
+    private int horaFinal;
+    private int duracao;
 
     public Tempo(int id, int horaInicial, int horaFinal) {
         setId(id);
