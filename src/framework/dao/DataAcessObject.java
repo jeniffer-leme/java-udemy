@@ -9,9 +9,5 @@ public abstract class DataAcessObject <T> {
     public abstract void  delete(T t) throws SQLException;
     
     public abstract T getUnique(Object... values) throws SQLException;
-    public abstract ArrayList<T> getAll() throws SQLException;
-    
-    
-    
-    
+    public abstract ArrayList<T> getAll() throws SQLException; 
 }

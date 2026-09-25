@@ -1,3 +1,14 @@
-<logs>
-    <exception class="class java.lang.Exception" date="Thu Aug 06 11:18:12 BRT 2026" messege="Teste"/>
-</logs>
+<raiz>
+    <pai_A atributo1="valor" atributo2="valor">
+        <filho_A atributo1="valor" atributo2="valor">
+            <neto_A atributo1="valor" atributo2="valor">conteudo</neto_A>
+            <neto_A2 atributo1="valor" atributo2="valor"/>
+        </filho_A>
+    </pai_A>
+    <pai_B atributo1="value" atributo2="value">
+        <filho_B1 atributo1="value" atributo2="value">conteudo</filho_B1>
+        <filho_B2 atributo1="value" atributo2="value">
+            <neto_B2 atributo1="value" atributo2="value">conteudo</neto_B2>
+        </filho_B2>
+    </pai_B>
+</raiz>
